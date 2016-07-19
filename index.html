@@ -5,39 +5,72 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-      body{
-        background-color: #e3e3e3;
-      }
-    
-      #center{
-        text-align: center;
-      }
-      
-      .player p{
-        display: inline-block;
-        margin-left: 5px;
-      }
-      
-      .player p, .player img{
-        vertical-align: middle;
-      }
-      
-      #api-credit{
-        font-size: 0.8em;
+* {
+/* Stuff from CaptainUI - DatOneLefty */
+									/* Font */
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+font-family: 'Open Sans', sans-serif;
+}
+div.nav { 								/* Navbar */
+background-color: #101010;
+color: white;
+left: 0;
+right: 0;
+margin: 0;
+font-family: 'Ubuntu Mono', monospace;
+}
+
+div.link-right {							/* For right side nav */
+float: right;
+}
+div.link {								/* For left side nav */
+float: left;
+}
+body {									/* For no margins */
+
+margin: 0;
+}
+
+
+.container { 								/* For margins */
+margin: 8px;
+} 
+
+
+a.nav { 								/* Navbar Links */
+padding: 5px;
+text-decoration: none;
+color: lightgray;
+margin: 5px;
+}
+
+
+div.login {								/* Nice login box */
+border: 1px solid gray;
+padding: 3%;
+margin: 5%;
+width: 25%;
+border-radius: 5px;
+}
       }
     </style>
   </head>
+  <div class="nav">
+  	<h1>QuatCraft Server Status</h1>
+ </div>
   <body>
-    <div id="center">
+<center>
       <img src="" id="server-icon">
-      <h1 id="loading-label">Loading...</h1>
-      <p id="version"></p>
-      <p id="server-description"></p>
-      <p id="amount-of-players"></p>
-      <div id="player-list"></div>
-      <p id="api-credit">APIs provided by <a href="http://api.minetools.eu/">Minetools</a> and <a href="https://crafatar.com">Crafatar</a>. <a href="https://github.com/FoxInFlame/MinecraftColorCodes">Minecraft Color Codes</a> provided by FoxInFlame</p>
+      <div class="login" id='loading-label'><h1 id='loading-label'>Loading...</h1><br><h3>This may take a few seconds</h3></div>
+      <div class="login"><h3>Server Version</h3><hr><p id="version"></p></div>
+      <div class="login"><h3>Server Description</h3><hr><p id="server-description"></p></div>
+      <div class="login"><h3>Number of players online</h3><hr><p id="amount-of-players"></p></div>
+      <div class="login"><h3>Currently Online</h3><hr><div id="player-list"></div></div>
+      <div class="login"><p id="api-credit">APIs provided by <a href="http://api.minetools.eu/">Minetools</a> and <a href="https://crafatar.com">Crafatar</a>. <a href="https://github.com/FoxInFlame/MinecraftColorCodes">Minecraft Color Codes</a> provided by FoxInFlame</p>
     </div>
     <script src="MinecraftColorCodes.min.3.7.js"></script>
     <script src="script.js"></script>
+</script>
+</center>
   </body>
 </html>
