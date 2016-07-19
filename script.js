@@ -1,7 +1,7 @@
 var serverRequest = new XMLHttpRequest(),
 	serverInfo;
 
-serverRequest.open("GET", "http://api.minetools.eu/ping/quatcraft.mcnode.net/25565", true);
+serverRequest.open("GET", "http://api.minetools.eu/ping/play.hiccup01.com/25565", true);
 serverRequest.onreadystatechange = function(){
 	if(serverRequest.readyState === XMLHttpRequest.DONE && serverRequest.status === 200){
 		serverInfo = JSON.parse(serverRequest.responseText);
@@ -15,7 +15,8 @@ function loadData(){
 		var playerInfo = serverInfo.players;
 		document.getElementById("server-icon").setAttribute("src", serverInfo.favicon);
 		document.getElementById("version").textContent = serverInfo.version.name;
-		document.getElementById("server-description").textContent = serverInfo.description;
+		//document.getElementById("server-description").textContent = serverInfo.description;
+		document.getElementById("server-description").appendChild(serverInfo.description.replaceColorCodes());
 		document.getElementById("amount-of-players").textContent = playerInfo.online + "/" + playerInfo.max;
 		if(playerInfo.online > 0){
 			for(var i = 0; i < playerInfo.online; i++){
