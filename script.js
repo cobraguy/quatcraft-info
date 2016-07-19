@@ -1,7 +1,7 @@
 var serverRequest = new XMLHttpRequest(),
-	serverInfo;
+    serverInfo;
 
-serverRequest.open("GET", "http://api.minetools.eu/ping/play.hiccup01.com/25565", true);
+serverRequest.open("GET", "https://crossorigin.me/https://api.minetools.eu/ping/play.hiccup01.com/25565", true);
 serverRequest.onreadystatechange = function(){
 	if(serverRequest.readyState === XMLHttpRequest.DONE && serverRequest.status === 200){
 		serverInfo = JSON.parse(serverRequest.responseText);
